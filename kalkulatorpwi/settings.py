@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dcl(-+bwrz2155klyynh(&*ez4ktxk)7+c)cjct2a(elv4!ig-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','pyra.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1','michalpyra.azurewebsites.net']
 
 
 # Application definition
