@@ -92,7 +92,7 @@
         <a href="/" class="navbarbutton">start</a>
         <a href="/memory" class="navbarbutton">gra Memory</a>
       </div>
-      <div class="content" id="info">Znajdź wszystkie pary!</div>
+      <div class="content" id="info">Zacznij klikać w kafelki by zacząć grę</div>
 
       <div id="okno"></div>
 
@@ -105,7 +105,7 @@
         
         ];
         kruki = krukistart.concat(krukistart);
-        kruki = shuffle(kruki);
+        kruki = losuj(kruki);
         
         var karta1 = null;
         var karta2 = null;
@@ -121,11 +121,11 @@
           karta.className = "karta";
           karta.dataset.numer = kruki[i].numer;
           karta.style.backgroundImage = "";
-          karta.addEventListener("click", flipCard);
+          karta.addEventListener("click", kartaodw);
           okno.appendChild(karta);
         }
         
-        function shuffle(tabl) {
+        function losuj(tabl) {
           var ind = tabl.length, tmp, rand;
         
           while (0 !== ind) {
@@ -141,7 +141,7 @@
           return tabl;
         }
         
-        function flipCard() {
+        function kartaodw() {
           if (karta1 && karta2) return;
         
           if (this === karta1) return;
@@ -162,8 +162,8 @@
         
               info.textContent = "Jest para!";
         
-              karta1.removeEventListener("click", flipCard);
-              karta2.removeEventListener("click", flipCard);
+              karta1.removeEventListener("click", kartaodw);
+              karta2.removeEventListener("click", kartaodw);
         
               karta1 = null;
               karta2 = null;
