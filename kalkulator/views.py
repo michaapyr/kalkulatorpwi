@@ -11,3 +11,8 @@ def index(request):
 
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
+
+def memory(request):
+
+    template = loader.get_template('memory.html')
+    return HttpResponse(template.render())
