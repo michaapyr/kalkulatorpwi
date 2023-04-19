@@ -1,6 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <title>Michał Pyra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Michał Pyra">
+    <meta name="description" content="Projekt z przedmiotu Programowanie w Internecie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+      html, body {
+        font-family: "Poppins", Helvetica, sans-serif,  Arial;
+        color: rgb(255, 255, 255);
+        height: 100%; 
+        width: 100%;
+        margin: 0;
+        background-color:  rgb(34, 40, 67);
+        }
+      .main {
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 100%;
+      }    
+      .top {
+        height: 10%;
+      }
+      .navbar {
+        height: 10%;
+      }
+      .navbarbutton {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        margin-right: 10%;
+        float: left;
+      }
+      .navbarbutton:hover {
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border-bottom-style: solid;
+        border-width: 5px;
+        border-color: rgb(177, 177, 177); ;
+        float: left;
+      }
+      .content {
+        width: 70%;
+        padding-bottom: 5%;
+        float: none;
+        display: inline-block
+      }
+      .buttons {
+        padding-top: 2%;
+        height: 10%;
+      }   
+      #img {
+        background-image: linear-gradient(to bottom, rgba(52, 58, 83, 0.2),  rgba(34, 40, 67, 1)),
+        url('https://images.theconversation.com/files/46845/original/78rt2bh5-1398177136.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip');
+        height: 400px;
+        background-size: cover;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
+      #okno {
+        display: flex;
+        flex-wrap: wrap;
+        width: 850px;
+      }
+
+      .karta {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(225, 227, 232, 0.2);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .karta2 {
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+
+      <div class="top"></div>
+      <div class="navbar">
+        <a href="/" class="navbarbutton">start</a>
+        <a href="/memory" class="navbarbutton">gra Memory</a>
+      </div>
+
+      <h3 id="demo" onclick="start()">Click me to change my color.</h3>
+      
+      <div class="content" id="info" onclick="start()">Zacznij klikać w kafelki by zacząć grę</div>
+
+      <div id="okno"></div>
 
       <script>
+ 
+
         var krukistart = [
         {numer: "0", obraz: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsfVnVysDJDPC4Kc_thF5zvjPlKF_Ef4J-ug&usqp=CAU"},
             {numer: "1", obraz: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTPJT_CWPsz3CD9fQouURrYoM6PllTuA_ZHKGOvw-catyVrKXEHHTbMXTf62PFvVEcTSI&usqp=CAU"},
@@ -22,14 +124,14 @@
         
         function start() {
 
-          for (var i = 0; i < kruki.length; i++) {
-            var karta = document.createElement("div");
-            karta.className = "karta";
-            karta.dataset.numer = kruki[i].numer;
-            karta.style.backgroundImage = "";
-            karta.addEventListener("click", kartaodw);
-            okno.appendChild(karta);
-          }
+        for (var i = 0; i < kruki.length; i++) {
+          var karta = document.createElement("div");
+          karta.className = "karta";
+          karta.dataset.numer = kruki[i].numer;
+          karta.style.backgroundImage = "";
+          karta.addEventListener("click", kartaodw);
+          okno.appendChild(karta);
+        }
 
         }
         
@@ -100,50 +202,6 @@
         }
       </script>
 
-      
-
-<style> 
-  .content {
-    width: 70%;
-    padding-bottom: 5%;
-    float: none;
-    display: inline-block
-  }
-
-  #img {
-    background-image: linear-gradient(to bottom, rgba(52, 58, 83, 0.2),  rgba(34, 40, 67, 1)),
-    url('https://images.theconversation.com/files/46845/original/78rt2bh5-1398177136.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip');
-    height: 400px;
-    background-size: cover;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  #okno {
-    display: flex;
-    flex-wrap: wrap;
-    width: 850px;
-  }
-
-  .karta {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(225, 227, 232, 0.2);
-    margin-right: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-
-  .karta2 {
-    background-size: cover;
-  }
-</style>
-
-<h3 id="demo" onclick="start()">Click me to change my color.</h3>
-
-<div onclick="start()" class="content" id="info">Zacznij klikać w kafelki by zacząć grę</div>
-
-<div id="okno"></div>
+    </div>
+  </body>
+</html>

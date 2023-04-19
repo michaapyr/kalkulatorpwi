@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader
+from . import models
+from .models import Kredyt
 
 # Create your views here.
 
@@ -9,10 +11,19 @@ from django.template import loader
 
 def index(request):
 
-    template = loader.get_template('index.html')
-    return HttpResponse(template.render())
+    return render(request, 'index.html')
 
 def memory(request):
-
-    template = loader.get_template('memory.html')
+    
+    template = loader.get_template('memory copy.html')
     return HttpResponse(template.render())
+
+def section(request, num):
+
+    if num == 1:
+        template = loader.get_template('info.html')
+        return HttpResponse(template.render())
+    if num == 2:
+        return HttpResponse("srata tata")
+    else:
+        return HttpResponse("błąd")
