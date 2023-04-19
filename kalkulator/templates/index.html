@@ -1,9 +1,4 @@
-{# Load the tag library #}
 {% load bootstrap5 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
 
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
@@ -14,6 +9,9 @@
     <meta name="author" content="Michał Pyra">
     <meta name="description" content="Projekt z przedmiotu Programowanie w Internecie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <title>Kruki</title>
 
     <style>
