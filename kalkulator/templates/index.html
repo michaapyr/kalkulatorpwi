@@ -56,20 +56,17 @@
 
       .cover-container {
         max-width: 70em;
+        
       }
 
       .nav-masthead .nav-link {
         color: rgba(255, 255, 255, 0.747);
-        border-bottom: .30rem solid transparent;
+        border-bottom: .35rem solid transparent;
       }
 
       .nav-masthead .nav-link:hover,
       .nav-masthead .nav-link:focus {
         border-bottom-color: rgba(255, 255, 255, .25);
-      }
-
-      .nav-masthead .nav-link + .nav-link {
-        margin-left: 2rem;
       }
 
       .nav-masthead .active {
@@ -91,8 +88,8 @@
       }
 
       .karta {
-        width: 14vh;
-        height: 14vh;
+        width: 16vh;
+        height: 16vh;
         background-color: rgba(225, 227, 232, 0.2);
         margin-right: 10px;
         margin-bottom: 10px;
@@ -142,16 +139,16 @@
 
 <body class="d-flex h-100 text-bg-dark">
 
-  <div id="cc" class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
+  <div class="cover-container d-flex w-100 h-100 p-2 mx-auto flex-column">
     <header class="container mb-auto">
       <div class="row">
         <div class="col-md-6 d-none d-md-block"><h2>Krukowate</h2></div>
           <div class="col-md-6">
               <nav class="row justify-content-evenly nav-masthead">
-                <a class="col-auto nav-link fw-bold py-2 px-0 active" id="index" onclick="showSection('index')">start</a>
-                <a class="col-auto nav-link fw-bold py-2 px-0" id="info" onclick="showSection('info')">wiedza</a>
-                <a class="col-auto nav-link fw-bold py-2 px-0" id="trivia" onclick="showSection('trivia')">ciekawostki</a>
-                <a class="col-auto nav-link fw-bold py-2 px-0" id="game" onclick="game()">gra</a>
+                <a class="col-auto nav-link fw-bold px-1 active" id="index" onclick="showSection('index')">start</a>
+                <a class="col-auto nav-link fw-bold px-1" id="info" onclick="showSection('info')">wiedza</a>
+                <a class="col-auto nav-link fw-bold px-1" id="trivia" onclick="showSection('trivia')">ciekawostki</a>
+                <a class="col-auto nav-link fw-bold px-1" id="game" onclick="game()">gra</a>
               </nav>
           </div>
       </div>
@@ -161,9 +158,9 @@
 
       <h1>Poznaj Krukowate</h1>
       <p class="mt-3"> 
-        Strona poświęcona całej rodzinie krukowatych. 
+        Strona poświęcona rodzinie krukowatych, obejmuje ona około 130 gatunków. 
         Są to jedne z najinteligentniejszych ptaków, sroka jest często uważana za najprowdopodobniej
-        nainteligentniejszy ptak na ziemii. Przejdź do strefy wiedza by dowiedzieć się więcej, sprawdź
+        nainteligentniejszy ptak na ziemi. Przejdź do strefy wiedza by dowiedzieć się więcej, sprawdź
         ciekawostki oraz zagraj w grę Memory,
         w której odkryjesz zdjęcia kruków - największych ptaków z rodziny krukowatych!
       </p>
@@ -216,7 +213,7 @@
             karta.addEventListener("click", kartaodw);
             okno.appendChild(karta);
           }
-          cont.textContent = "Zacznij klikać w kafelki by rozpocząć grę";
+          cont.textContent = "Zacznij klikać w kafelki by rozpocząć grę w Memory";
 
         }
         
@@ -287,7 +284,7 @@
     </script>
 
     <footer class="mt-auto text-white-50 text-center">
-      <p>Krukowate 2023 v.3.1</p>
+      <p>Krukowate 2023 v.4.0</p>
     </footer>
   </div>
 
