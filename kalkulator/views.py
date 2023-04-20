@@ -20,10 +20,13 @@ def memory(request):
 
 def section(request, num):
 
-    if num == 1:
-        template = loader.get_template('info.html')
-        return HttpResponse(template.render())
-    if num == 2:
-        return HttpResponse("srata tata")
+    if num == 'info':
+        return HttpResponse(loader.get_template('info.html').render())
+    elif num == 'trivia':
+        return HttpResponse(loader.get_template('trivia.html').render())
+    elif num == 'index':
+        return HttpResponse(loader.get_template('index2.html').render())
+    elif num == 'game':
+        return HttpResponse('gra start!')
     else:
-        return HttpResponse("błąd")
+        return HttpResponse("błąd zawartości")
