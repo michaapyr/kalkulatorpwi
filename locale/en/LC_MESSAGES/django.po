@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-13 08:51+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\kalkulator\templates\index.html:14
+msgid "Krukowate "
+msgstr "Corvids"
+
+#: .\kalkulator\templates\index.html:141 .\kalkulator\templates\index.html:290
+msgid "Krukowate"
+msgstr "Corvids"
+
+#: .\kalkulator\templates\index.html:144
+msgid "start"
+msgstr "home"
+
+#: .\kalkulator\templates\index.html:145 .\kalkulator\templates\index2.html:14
+msgid "wiedza"
+msgstr "knowledge"
+
+#: .\kalkulator\templates\index.html:146 .\kalkulator\templates\info.html:79
+msgid "ciekawostki"
+msgstr "trivia"
+
+#: .\kalkulator\templates\index.html:147
+msgid "gra"
+msgstr "game"
+
+#: .\kalkulator\templates\index.html:169
+msgid ""
+"Strona używa plików cookies. Korzystanie z witryny bez zmiany ustawień "
+"Twojej przeglądarki oznacza, że będą one umieszczane na Twoim urządzeniu "
+"końcowym."
+msgstr ""
+"To make this website work, we log user data. By using this website without "
+"changing your browsers's settings, you agree to our cookie policy."
+
+#: .\kalkulator\templates\index.html:170
+#, fuzzy
+#| msgid "Polityka Prywatności"
+msgid "Zobacz Politykę Prywatności"
+msgstr "Privacy Policy"
+
+#: .\kalkulator\templates\index.html:174
+msgid "wszystko jasne"
+msgstr "got it"
+
+#: .\kalkulator\templates\index.html:221
+msgid "Zacznij klikać w kafelki by rozpocząć grę w Memory"
+msgstr "Start clicking on the tiles to start playing Memory"
+
+#: .\kalkulator\templates\index.html:257
+msgid "Jest para!"
+msgstr "a match!"
+
+#: .\kalkulator\templates\index.html:267
+msgid "Gratulacje! Twoja liczba prób to "
+msgstr "Congratulations! Your number of tries is "
+
+#: .\kalkulator\templates\index.html:272
+msgid "Nie pasują. Spróbuj ponownie"
+msgstr "No match, try again"
+
+#: .\kalkulator\templates\index.html:293 .\kalkulator\templates\policy.html:4
+msgid "Polityka Prywatności"
+msgstr "Privacy Policy"
+
+#: .\kalkulator\templates\index2.html:4
+msgid "Poznaj Krukowate"
+msgstr "Meet The Corvids"
+
+#: .\kalkulator\templates\index2.html:6
+msgid ""
+"Strona poświęcona rodzinie krukowatych, obejmuje ona około 130 gatunków. Są "
+"to jedne z najinteligentniejszych ptaków, sroka jest często uważana za "
+"najprowdopodobniej nainteligentniejszy ptak na ziemi. Przejdź do strefy "
+"wiedza by dowiedzieć się więcej, sprawdź ciekawostki oraz zagraj w grę "
+"Memory, w której odkryjesz zdjęcia kruków - największych ptaków z rodziny "
+"krukowatych!"
+msgstr ""
+"A website dedicated to the crow family, it includes about 130 species. They "
+"are one of the most intelligent birds, the magpie is often regarded as "
+"possibly the most intelligent bird on earth. Go to the knowledge zone to "
+"learn more, check the trivia and play the Memory game in which you will "
+"discover pictures of ravens - the largest birds of the crow family!"
+
+#: .\kalkulator\templates\info.html:7
+msgid "Sroki"
+msgstr "Magpies"
+
+#: .\kalkulator\templates\info.html:9 .\kalkulator\templates\info.html:33
+#: .\kalkulator\templates\info.html:57
+msgid "polubienia"
+msgstr "likes"
+
+#: .\kalkulator\templates\info.html:17
+msgid ""
+"Średni czas życia to 3,7 lat, waga około 200 g, rozpiętość skrzydeł to 52-60 "
+"cm. Jedyny gatunek spoza ssaków, który zdaje tzw. test lustra. Wszystkożerne "
+"z przewagą pożywienia pochodzenia zwierzęcego, potrafą łowić owady w locie. "
+"Sroki jako jedyne znane w polsce ptaki potrafią budować gniazda z "
+"zadaszeniem, wejście ma kształ koła, w ten sposób gniazda buduje około "
+"ćwierć par lęgowych. W kulturze srokę kojarzy się z gadatliwością, "
+"plotkarstwem i złodziejsctwem. W Polsce popularne powiedzenia to „Gapić się "
+"jak sroka w kość” czy „Wypaść sroce spod ogona”. Na zachodzie Europy srokę "
+"uważano za zły omen, zwiastun nieszczęścia, szczególnie gdy napotka się ją "
+"samą."
+msgstr ""
+"The average lifespan is 3.7 years, weight is about 200 g, wingspan is 52-60 "
+"cm. The only non-mammal species that mirror test. Omnivorous with a "
+"predominance of food of animal origin, they can catch insects in flight. "
+"Magpies are the only birds known in Poland that are able to build roofed "
+"nests, the entrance is circular in shape, and about a quarter of breeding "
+"pairs build nests in this way. In culture, the magpie is associated with "
+"talkativeness, gossip and theft. In Poland, popular sayings are \"Stare like "
+"a magpie on a bone\" or \"Gapać magpie from under the tail\". In Western "
+"Europe, the magpie was considered a bad omen, a harbinger of misfortune, "
+"especially when encountered alone."
+
+#: .\kalkulator\templates\info.html:31
+msgid "Kruki"
+msgstr "Ravens"
+
+#: .\kalkulator\templates\info.html:41
+msgid ""
+"Żyją średnio 10-15 lat, ważą od 0,5 do 2 kg, rozpiętość skrzydeł kruka może "
+"sięgać 1,5 metra. Tworzą pary na całe życie, poza okresem lęgowym żyją w "
+"stadach, w których panuje określona hierarchia, jednak często w niej "
+"awansują. Np. samica znajdująca się na samym jej dole, po związaniu się z "
+"samcem z jej szczytu, automatycznie awansuje, co wiąże się z tym, że "
+"osobniki które niegdyś stały od niej wyżej m.in. ustępują jej miejsca przy "
+"padlinie, czego nie robiły wcześniej. Jedzą padlinę, owady i odpady "
+"spożywcze, a także ziarna zbóż, jagody, owoce. Zaciekle bronią swojego "
+"rewiru i odganiają z niego inne ptaki drapieżne. Nie wahają się czasem "
+"zaatakować nawet orła. W badaniach dowiedziono, że kruki umieją łączyć "
+"elementy zdobytej wcześniej wiedzy, by rozwiązać nowy problem. Na "
+"przestrzeni wieków ptaki te odgrywały znaczącą rolę w mitologii, folklorze, "
+"sztuce i literaturze, w wielu przeszłych wierzeniach postrzegane pozytywnie, "
+"uznawane za symbol religijny lub boga (wykluczając z tego Chrześcijaństwo, w "
+"którym pełniły role negatywne)."
+msgstr ""
+"They live on average 10-15 years, weigh from 0.5 to 2 kg, the wingspan of a "
+"raven can reach 1.5 meters. They form pairs for life, apart from the "
+"breeding season, they live in flocks in which there is a specific hierarchy, "
+"but they are often promoted in it. For example, a female at the very bottom, "
+"after bonding with a male from its top, automatically advances, which is "
+"related to the fact that individuals that used to be higher than her, e.g. "
+"they give her a place next to the carcass, which they did not do before. "
+"They eat carrion, insects and food waste, as well as cereal grains, berries, "
+"fruits. They fiercely defend their territory and drive other birds of prey "
+"away from it. They do not hesitate to attack even an eagle from time to "
+"time. Research has proven that ravens can combine elements of previously "
+"acquired knowledge to solve a new problem. Over the centuries, these birds "
+"have played a significant role in mythology, folklore, art and literature, "
+"seen positively in many past beliefs, considered a religious symbol or god "
+"(excluding Christianity, in which they played negative roles)."
+
+#: .\kalkulator\templates\info.html:55
+msgid "Wrony Siwe"
+msgstr "Hooded Crows"
+
+#: .\kalkulator\templates\info.html:66
+msgid ""
+"Typowy czas życia wrony siwej nie został jeszcze przez nikogo dokładnie "
+"zbadany, waży około 0,4 kg, rozpiętość skrzydeł sięga 100cm. Wrona jest "
+"typowym przykładem powstania z jednego pierwotnego gatunku, pod wpływem ery "
+"lodowcowej, dwóch odmiennych form różniących się miejscami występowania, ale "
+"nie trybem życia (podzielono je na 2 czarne i 4 siwe podgatunki). W polskiej "
+"świadomości wrona wyróżniła się po wydarzeniu awaryjnego lądowania samolotem "
+"pasażerskim przez kapitana Tadeusza Wronę, ktoś powiedział: \"Lataj jak "
+"orzeł, ląduj jak Wrona\" - było to potem szeroko powtarzane w mediach."
+msgstr ""
+"The typical lifespan of the gray crow has not yet been thoroughly studied by "
+"anyone, it weighs about 0.4 kg, the wingspan reaches 100 cm. The crow is a "
+"typical example of the emergence of one primitive species, under the "
+"influence of the Ice Age, into two different forms that differ in their "
+"places of occurrence, but not in their lifestyle (they were divided into 2 "
+"black and 4 gray subspecies). In the Polish consciousness, the crow stood "
+"out after the emergency landing of a passenger plane by Captain Tadeusz "
+"Wrona, someone said: \"Fly like an eagle, land like a crow\" - this was then "
+"widely repeated in the media."
+
+#: .\kalkulator\templates\info.html:77
+msgid "źródła"
+msgstr "sources"
+
+#: .\kalkulator\templates\policy.html:6
+msgid " Pliki cookies"
+msgstr " Cookie files"
+
+#: .\kalkulator\templates\policy.html:7
+msgid ""
+"Niektóre elementy naszego serwisu mogą wykorzystywać cookies. Cookies to "
+"małe pliki tekstowe, które są wysyłane do komputera, tabletu lub telefonu "
+"Użytkownika, zapisywane na nim, a przy kolejnej wizycie Użytkownika na "
+"stronie są odczytywane przez nasz system informatyczny. Cookies pozwalają na "
+"zidentyfikowanie Użytkownika na potrzeby wykonania określonej operacji w "
+"serwisie. Cookies są wykorzystywane przez praktycznie każdą stronę "
+"internetową, ponieważ ułatwiają Użytkownikom korzystanie z serwisu oraz "
+"pozwalają administratorowi na używanie przydatnych narzędzi, na przykład "
+"służących do celów statystycznych. Przy pierwszej wizycie na stronie "
+"wyświetlamy Użytkownikom informację dotyczącą wykorzystywania plików cookies "
+"i pytamy o zgodę na ich stosowanie. Ustawienia cookies Użytkownik może "
+"zmienić w swojej przeglądarce. Może całkowicie z nich zrezygnować, ale musi "
+"mieć świadomość, że może to utrudnić korzystanie nie tylko z naszej, ale i z "
+"wielu innych stron internetowych."
+msgstr ""
+"Some elements of our website may use cookies. Cookies are small text files "
+"that are sent to the User's computer, tablet or phone, saved on it, and "
+"during the next visit of the User to the website are read by our IT system. "
+"Cookies allow you to identify the User for the purpose of performing a "
+"specific operation on the website. Cookies are used by virtually every "
+"website because they make it easier for users to use the website and allow "
+"the administrator to use useful tools, for example for statistical purposes. "
+"At the first visit to the website, we send Users information on the use of "
+"cookies and ask for consent to their use. Cookie settings can be changed by "
+"the User in their browser. He can opt out of them completely, but he must be "
+"aware that this may make it difficult to use not only our, but also many "
+"other websites."
+
+#: .\kalkulator\templates\trivia.html:10
+msgid "Dokumentowane są przypadki kruków, które dożywają ponad 20 lat."
+msgstr ""
+"There are documented cases of ravens that live to be over 20 years old."
+
+#: .\kalkulator\templates\trivia.html:13
+msgid ""
+"Kruk przywoływany jest w kilku miejscach w Dziadach Adama Mickiewicza, w "
+"„Małej Improwizacji”, gdy strzeże świata tajemnego przed nieprzygotowanym "
+"profanem: „skrzydła ma czarne jak burzliwa chmura, a szerokie i długie na "
+"kształt tęczy łuku. I niebo całe zakrywa”."
+msgstr ""
+"The raven is mentioned in several places in Adam Mickiewicz's Forefathers' "
+"Eve, in \"Little Improvisation\", when it guards the secret world against "
+"unprepared profanity: \"its wings are black as a stormy cloud, and wide and "
+"long like a rainbow arch. And it covers the whole sky.\""
+
+#: .\kalkulator\templates\trivia.html:18
+msgid ""
+"W Irlandii wierzono, że pukanie sroki w okno ostrzega przed zbliżającą się "
+"śmiercią."
+msgstr ""
+"In Ireland it was believed that a magpie knocking on a window warned of "
+"impending death."
+
+#: .\kalkulator\templates\trivia.html:21
+msgid ""
+"U Srok zaobserwowano rozbudowane rytuały międzyosobnicze, w tym m.in. coś, "
+"co można porównywać do obchodzenia żałoby po zmarłym osobniku."
+msgstr ""
+"With Magpies, extensive interpersonal rituals have been observed, including "
+"e.g. something that can be compared to mourning for a deceased individual."
+
+#: .\kalkulatorpwi\settings.py:37
+msgid "Polish"
+msgstr "Polish"
+
+#: .\kalkulatorpwi\settings.py:38
+msgid "English"
+msgstr "English"

@@ -1,12 +1,16 @@
-<h1>Poznaj Krukowate</h1>
-<p class="mt-3"> 
-  Strona poświęcona rodzinie krukowatych, obejmuje ona około 130 gatunków. 
-  Są to jedne z najinteligentniejszych ptaków, sroka jest często uważana za najprowdopodobniej
-  nainteligentniejszy ptak na ziemi. Przejdź do strefy wiedza by dowiedzieć się więcej, sprawdź
-  ciekawostki oraz zagraj w grę Memory,
-  w której odkryjesz zdjęcia kruków - największych ptaków z rodziny krukowatych!
-</p>
+{% load i18n %}
 
-<p class="mt-4">
-  <a onclick="showSection('info')" class="btn btn-lg btn-light fw-bold border-white bg-white">wiedza</a>
-</p>
+<div class="container2 m-auto">
+  <h1>{% trans 'Poznaj Krukowate' %}</h1>
+  <p class="mt-4"> 
+    {% blocktrans trimmed %}Strona poświęcona rodzinie krukowatych, obejmuje ona około 130 gatunków. 
+    Są to jedne z najinteligentniejszych ptaków, sroka jest często uważana za najprowdopodobniej
+    nainteligentniejszy ptak na ziemi. Przejdź do strefy wiedza by dowiedzieć się więcej, sprawdź
+    ciekawostki oraz zagraj w grę Memory,
+    w której odkryjesz zdjęcia kruków - największych ptaków z rodziny krukowatych!{% endblocktrans %}
+  </p>
+
+  <p class="mt-5">
+    <a onclick="showSection('info')" class="btn btn-lg btn-light fw-bold border-white bg-white">{% trans 'wiedza' %}</a>
+  </p>
+</div>
