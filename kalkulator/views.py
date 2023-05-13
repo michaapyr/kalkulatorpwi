@@ -10,14 +10,13 @@ def index(request):
         lang = request.session['lang']
     except: pass
     return redirect('/'+lang+'/index')
-    #return render(request, 'index.html',{'section':'index'})
 
 def lang(request, num):
-    request.session['lang'] = request.LANGUAGE_CODE
     return render(request, 'index.html',{'section':num})
 
 def section(request, num):
     try:
+        request.session['lang'] = request.LANGUAGE_CODE
         voted = request.session['voted']
     except: 
         voted = False
