@@ -5,18 +5,15 @@ from .models import Likes
 #from django.utils.translation import gettext as _
 
 def index(request):
-    lang = 'pl'
-    try:
-        lang = request.session['lang']
-    except: pass
-    return redirect('/'+lang+'/index')
+    return render(request, 'index.html')
 
 def lang(request, num):
+    if num == 'consent':
+        num = 'index'
     return render(request, 'index.html',{'section':num})
 
 def section(request, num):
     try:
-        request.session['lang'] = request.LANGUAGE_CODE
         voted = request.session['voted']
     except: 
         voted = False
