@@ -52,10 +52,8 @@ msgstr ""
 "changing your browsers's settings, you agree to our cookie policy."
 
 #: .\kalkulator\templates\index.html:170
-#, fuzzy
-#| msgid "Polityka Prywatności"
 msgid "Zobacz Politykę Prywatności"
-msgstr "Privacy Policy"
+msgstr "See Privacy Policy"
 
 #: .\kalkulator\templates\index.html:174
 msgid "wszystko jasne"
