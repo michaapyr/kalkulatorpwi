@@ -118,7 +118,7 @@
               document.getElementById("okno").innerHTML = '';
               document.querySelector('#cont').innerHTML = text;
               document.getElementById(section).classList.add('active');
-              if(section==='index'){
+              if(section==='start'){
                 document.querySelector('.cover-container').style.setProperty('--filt', 'blur(0px)');
               }
             }
@@ -130,7 +130,7 @@
           window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+section);
       }
       function removeSection() {
-            document.getElementById('index').classList.remove('active');
+            document.getElementById('start').classList.remove('active');
             document.getElementById('info').classList.remove('active');
             document.getElementById('trivia').classList.remove('active');
             document.getElementById('game').classList.remove('active');
@@ -145,7 +145,7 @@
           <div class="col-md-6 d-none d-md-block"><h2>{% trans 'Krukowate' %}</h2></div>
             <div class="col-md-6">
                 <nav class="row justify-content-between nav-masthead">
-                  <a class="col-auto nav-link fw-bold px-1 active" id="index" onclick="showSection('index')">{% trans 'start'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 active" id="start" onclick="showSection('start')">{% trans 'start'%}</a>
                   <a class="col-auto nav-link fw-bold px-1" id="info" onclick="showSection('info')">{% trans 'wiedza'%}</a>
                   <a class="col-auto nav-link fw-bold px-1" id="trivia" onclick="showSection('trivia')">{% trans 'ciekawostki'%}</a>
                   <a class="col-auto nav-link fw-bold px-1" id="game" onclick="game()">{% trans 'gra'%}</a>
@@ -155,8 +155,8 @@
                         {{CURRENT_LANGUAGE}}
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a id="lang_pl" class="dropdown-item" href="/pl{{ request.get_full_path|slice:'3:' }}">polski</a></li>
-                        <li><a id="lang_en" class="dropdown-item" href="/en{{ request.get_full_path|slice:'3:' }}">english</a></li>
+                        <li><a id="lang_pl" class="dropdown-item" href="/pl/start">polski</a></li>
+                        <li><a id="lang_en" class="dropdown-item" href="/en/start">english</a></li>
                       </ul>
                     </div>
                   </div>
@@ -184,12 +184,11 @@
         {%endif%}
       </header>
       <main id="cont" class="container mt-4 lead">
-        {%if not section%}{%include 'index2.html'%}{%endif%}
+        {%include section%}
       </main>
       <div id="okno" class="container m-auto mt-2">
       </div>
       <script>
-          {%if section%}showSection('{{section}}');{%endif%}
           var krukistart = [
           {numer: "0", obraz: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsfVnVysDJDPC4Kc_thF5zvjPlKF_Ef4J-ug&usqp=CAU"},
               {numer: "1", obraz: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTPJT_CWPsz3CD9fQouURrYoM6PllTuA_ZHKGOvw-catyVrKXEHHTbMXTf62PFvVEcTSI&usqp=CAU"},
@@ -291,7 +290,7 @@
         <div class="container" >
         <div class="row justify-content-center" >
           <div class="col-auto" >
-            <small> {% trans 'Krukowate'%} 2023 v.5.4 </small>
+            <small> {% trans 'Krukowate'%} 2023 v.5.7 </small>
           </div>
           <div class="col-auto" >
             <a onclick="showSection('policy')"><small>{% trans 'Polityka Prywatności'%}</small></a>

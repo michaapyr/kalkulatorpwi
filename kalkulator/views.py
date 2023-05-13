@@ -5,12 +5,23 @@ from .models import Likes
 #from django.utils.translation import gettext as _
 
 def index(request):
-    return render(request, 'index.html')
+    try:
+        lang = request.session['lang']
+        if lang != 'pl':
+            return redirect('/'+lang+'/start')
+    except: pass
+    return render(request, 'index.html',{'section':'start.html'})
 
 def lang(request, num):
-    if num == 'consent':
-        num = 'index'
-    return render(request, 'index.html',{'section':num})
+    request.session['lang'] = request.LANGUAGE_CODE
+    try:
+        template = num+'.html'
+        loader.get_template(template).render()
+        voted = request.session['voted']
+        birds = likes('') 
+        return render(request, 'index.html',{'section':template,'voted':voted, 'birds':birds})
+    except:
+        return render(request, 'index.html',{'section':'start.html'})
 
 def section(request, num):
     try:
@@ -23,8 +34,8 @@ def section(request, num):
         return HttpResponse(loader.get_template('info.html').render({'birds':birds, 'voted':voted}))
     elif num == 'trivia':
         return HttpResponse(loader.get_template('trivia.html').render())
-    elif num == 'index':
-        return HttpResponse(loader.get_template('index2.html').render())
+    elif num == 'start':
+        return HttpResponse(loader.get_template('start.html').render())
     elif num == 'game':
         return HttpResponse('gra start!')
     elif num == 'consent':
@@ -54,3 +65,6 @@ def likes(bird_name):
     for i in birds:
         birds_table[i.bird] = i.likes
     return birds_table
+
+def favico(request):
+    return HttpResponse('')
