@@ -15,9 +15,12 @@ def index(request):
 def lang(request, num):
     request.session['lang'] = request.LANGUAGE_CODE
     try:
+        voted = request.session['voted']
+    except:
+        voted = False
+    try:
         template = num+'.html'
         loader.get_template(template).render()
-        voted = request.session['voted']
         birds = likes('') 
         return render(request, 'index.html',{'section':template,'voted':voted, 'birds':birds})
     except:
