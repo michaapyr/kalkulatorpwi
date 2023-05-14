@@ -40,7 +40,7 @@ def section(request, num):
     elif num == 'start':
         return HttpResponse(loader.get_template('start.html').render())
     elif num == 'game':
-        return HttpResponse('gra start!')
+        return HttpResponse(loader.get_template('game.html').render())
     elif num == 'consent':
         request.session['consent'] = 1
         return HttpResponse('consent')

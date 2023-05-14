@@ -70,7 +70,7 @@
         color: #333;
         text-shadow: none;
       }
-      #okno {
+      #okno, #okno2 {
         width: 110%;
         display: flex;
         flex-wrap: wrap;
@@ -107,7 +107,7 @@
       }
     </style>
     <script>
-      function showSection(section) {   
+      function showSection(section, url_change) {   
           document.getElementById('lang_pl').setAttribute("href","/pl/"+section)
           document.getElementById('lang_en').setAttribute("href","/en/"+section)
           fetch(`/{{CURRENT_LANGUAGE}}/sections/${section}`)
@@ -127,7 +127,9 @@
             }
 
           });
-          window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+section);
+          if(url_change){
+            window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+section);
+          }
       }
       function removeSection() {
             document.getElementById('start').classList.remove('active');
@@ -145,10 +147,10 @@
           <div class="col-md-6 d-none d-md-block"><h2>{% trans 'Krukowate' %}</h2></div>
             <div class="col-md-6">
                 <nav class="row justify-content-between nav-masthead">
-                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'start.html'%}active{%endif%}" id="start" onclick="showSection('start')">{% trans 'start'%}</a>
-                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'info.html'%}active{%endif%}" id="info" onclick="showSection('info')">{% trans 'wiedza'%}</a>
-                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'trivia.html'%}active{%endif%}" id="trivia" onclick="showSection('trivia')">{% trans 'ciekawostki'%}</a>
-                  <a class="col-auto nav-link fw-bold px-1" id="game" onclick="game()">{% trans 'gra'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'start.html'%}active{%endif%}" id="start" onclick="showSection('start', true)">{% trans 'start'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'info.html'%}active{%endif%}" id="info" onclick="showSection('info', true)">{% trans 'wiedza'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'trivia.html'%}active{%endif%}" id="trivia" onclick="showSection('trivia', true)">{% trans 'ciekawostki'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'trivia.html'%}game{%endif%}" id="game" onclick="game()">{% trans 'gra'%}</a>
                   <div class="col-auto fw-bold px-1 mt-2">
                     <div class="btn-group" role="group">
                       <button type="button" class="btn btn-outline-light btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -175,7 +177,7 @@
                   </small>
                 </div>
                 <div class="col-auto">
-                  <a class="btn btn-outline-dark btn-sm" onclick="showSection('consent')" role="button">{% trans 'wszystko jasne'%}</a>
+                  <a class="btn btn-outline-dark btn-sm" onclick="showSection('consent', false)" role="button">{% trans 'wszystko jasne'%}</a>
                 </div>
               </div>
             </div>
@@ -186,7 +188,7 @@
       <main id="cont" class="container mt-4 lead">
         {%include section%}
       </main>
-      <div id="okno" class="container m-auto mt-2">
+      <div id="okno" class="container m-auto mt-4">
       </div>
       <script>
           var krukistart = [
@@ -204,6 +206,7 @@
           var okno = document.getElementById("okno");
           var cont = document.getElementById("cont");
           function game() {
+            window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+'game');
             removeSection();
             document.getElementById('game').classList.add('active');
             document.getElementById("okno").innerHTML = '';
@@ -290,7 +293,7 @@
         <div class="container" >
         <div class="row justify-content-center" >
           <div class="col-auto" >
-            <small> {% trans 'Krukowate'%} 2023 v.6.0 </small>
+            <small> {% trans 'Krukowate'%} 2023 v.6.1 </small>
           </div>
           <div class="col-auto" >
             <a onclick="showSection('policy')"><small>{% trans 'Polityka Prywatności'%}</small></a>
