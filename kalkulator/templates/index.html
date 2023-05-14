@@ -145,9 +145,9 @@
           <div class="col-md-6 d-none d-md-block"><h2>{% trans 'Krukowate' %}</h2></div>
             <div class="col-md-6">
                 <nav class="row justify-content-between nav-masthead">
-                  <a class="col-auto nav-link fw-bold px-1 active" id="start" onclick="showSection('start')">{% trans 'start'%}</a>
-                  <a class="col-auto nav-link fw-bold px-1" id="info" onclick="showSection('info')">{% trans 'wiedza'%}</a>
-                  <a class="col-auto nav-link fw-bold px-1" id="trivia" onclick="showSection('trivia')">{% trans 'ciekawostki'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'start.html'%}active{%endif%}" id="start" onclick="showSection('start')">{% trans 'start'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'info.html'%}active{%endif%}" id="info" onclick="showSection('info')">{% trans 'wiedza'%}</a>
+                  <a class="col-auto nav-link fw-bold px-1 {% if section == 'trivia.html'%}active{%endif%}" id="trivia" onclick="showSection('trivia')">{% trans 'ciekawostki'%}</a>
                   <a class="col-auto nav-link fw-bold px-1" id="game" onclick="game()">{% trans 'gra'%}</a>
                   <div class="col-auto fw-bold px-1 mt-2">
                     <div class="btn-group" role="group">
@@ -155,8 +155,8 @@
                         {{CURRENT_LANGUAGE}}
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a id="lang_pl" class="dropdown-item" href="/pl/start">polski</a></li>
-                        <li><a id="lang_en" class="dropdown-item" href="/en/start">english</a></li>
+                        <li><a id="lang_pl" class="dropdown-item" href="/pl/{{section|slice:':-5'}}">polski</a></li>
+                        <li><a id="lang_en" class="dropdown-item" href="/en/{{section|slice:':-5'}}">english </a></li>
                       </ul>
                     </div>
                   </div>
@@ -290,7 +290,7 @@
         <div class="container" >
         <div class="row justify-content-center" >
           <div class="col-auto" >
-            <small> {% trans 'Krukowate'%} 2023 v.5.7 </small>
+            <small> {% trans 'Krukowate'%} 2023 v.5.8 </small>
           </div>
           <div class="col-auto" >
             <a onclick="showSection('policy')"><small>{% trans 'Polityka Prywatności'%}</small></a>
