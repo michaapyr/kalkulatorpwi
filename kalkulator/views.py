@@ -1,53 +1,34 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.template import loader
 from .models import Likes
-#from django.utils.translation import gettext as _
 
 def index(request):
-    try:
-        lang = request.session['lang']
-        if lang != 'pl':
-            return redirect('/'+lang+'/start')
-    except: pass
+    if 'lang' in request.session:
+        if request.session['lang'] != 'pl':
+            return redirect('/'+request.session['lang']+'/start')
     return render(request, 'index.html',{'section':'start.html'})
 
-def lang(request, num):
+def page(request, num):
     request.session['lang'] = request.LANGUAGE_CODE
+    birds = likes('', request) 
     try:
-        voted = request.session['voted']
-    except:
-        voted = False
-    try:
-        template = num+'.html'
+        template = num + '.html'
         loader.get_template(template).render()
-        birds = likes('') 
-        return render(request, 'index.html',{'section':template,'voted':voted, 'birds':birds})
+        return render(request, 'index.html',{'section':template,'voted':request.session['voted'], 'birds':birds})
     except:
-        return render(request, 'index.html',{'section':'start.html'})
-
+        return redirect('/'+request.LANGUAGE_CODE+'/start')
+    
 def section(request, num):
-    try:
-        voted = request.session['voted']
-    except: 
-        voted = False
-        request.session['voted'] = voted
     if num == 'info':
-        birds = likes('')  
-        return HttpResponse(loader.get_template('info.html').render({'birds':birds, 'voted':voted}))
-    elif num == 'trivia':
-        return HttpResponse(loader.get_template('trivia.html').render())
-    elif num == 'start':
-        return HttpResponse(loader.get_template('start.html').render())
-    elif num == 'game':
-        return HttpResponse(loader.get_template('game.html').render())
+        birds = likes('', request)  
+        return HttpResponse(loader.get_template('info.html').render({'birds':birds, 'voted':request.session['voted']}))
     elif num == 'consent':
         request.session['consent'] = 1
         return HttpResponse('consent')
     elif num.split('__')[0] == 'like':     
         if not request.session['voted']:
-            birds = likes(num.split('__')[1])  
-            request.session['voted'] = True  
+            birds = likes(num.split('__')[1], request)  
         else:
             birds = likes('')  
         return HttpResponse(loader.get_template('info.html').render({'birds':birds, 'voted': True}))
@@ -56,18 +37,21 @@ def section(request, num):
             template = str(num)+'.html'
             return HttpResponse(loader.get_template(template).render())
         except:
-            return HttpResponse('')
+            return redirect('/'+request.LANGUAGE_CODE+'/start')
 
-def likes(bird_name):
+def likes(bird_name, request):
+    if not 'voted' in request.session:
+        request.session['voted'] = False
     birds = Likes.objects.all()
     if bird_name:
         bird = birds.get(bird = bird_name)
         likes = bird.likes + 1
         Likes.objects.filter(bird = bird_name).update(likes = likes)
+        request.session['voted'] = True
     birds_table = {}
     for i in birds:
         birds_table[i.bird] = i.likes
     return birds_table
 
 def favico(request):
-    return HttpResponse('')
+    return HttpResponseNotFound(":(") 

@@ -1,6 +1,8 @@
 {% load bootstrap5 %}
 {% load i18n %}
 {% get_current_language as CURRENT_LANGUAGE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
 <!doctype html>
 <html lang="{{CURRENT_LANGUAGE}}" class="h-100" data-bs-theme="auto">
   <head>
@@ -112,7 +114,7 @@
           .then(response => response.text())
           .then(text => {
             if(text !== 'consent'){
-              removeSection();
+              removeSection(section, url_change);
               document.getElementById("okno").innerHTML = '';
               document.querySelector('#cont').innerHTML = text;
               document.getElementById(section).classList.add('active');
@@ -123,15 +125,13 @@
             else{
               document.getElementById("consent").innerHTML = '';
             }
-
           });
-          if(url_change){
-            window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+section);
-            document.getElementById('lang_pl').setAttribute("href","/pl/"+section);
-            document.getElementById('lang_en').setAttribute("href","/en/"+section);
-          }
       }
-      function removeSection() {
+      function removeSection(section, url_change) {
+            if (url_change){ window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+section); }
+              {% for i in languages %}
+                document.getElementById('lang_{{ i.code }}').setAttribute("href","/{{ i.code }}/"+section);  
+              {% endfor %}
             document.getElementById('start').classList.remove('active');
             document.getElementById('info').classList.remove('active');
             document.getElementById('trivia').classList.remove('active');
@@ -157,8 +157,9 @@
                         {{CURRENT_LANGUAGE}}
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a id="lang_pl" class="dropdown-item" href="/pl/{{section|slice:':-5'}}">polski</a></li>
-                        <li><a id="lang_en" class="dropdown-item" href="/en/{{section|slice:':-5'}}">english </a></li>
+                        {% for i in languages %}
+                        <li><a id="lang_{{ i.code }}" class="dropdown-item" href="/{{ i.code }}/{{section|slice:':-5'}}">{{ i.name_local }}</a></li>
+                        {% endfor %}
                       </ul>
                     </div>
                   </div>
@@ -173,7 +174,7 @@
                 <div class="col">
                   <small> 
                     {% trans 'Strona używa plików cookies. Korzystanie z witryny bez zmiany ustawień Twojej przeglądarki oznacza, że będą one umieszczane na Twoim urządzeniu końcowym.'%}
-                    <a onclick="showSection('policy')">{% trans 'Zobacz Politykę Prywatności'%}</a>
+                    <a onclick="showSection('policy', true)">{% trans 'Zobacz Politykę Prywatności'%}</a>
                   </small>
                 </div>
                 <div class="col-auto">
@@ -206,8 +207,7 @@
           var okno = document.getElementById("okno");
           var cont = document.getElementById("cont");
           function game() {
-            window.history.pushState('', '', '/{{CURRENT_LANGUAGE}}/'+'game');
-            removeSection();
+            removeSection('game', true);
             document.getElementById('game').classList.add('active');
             document.getElementById("okno").innerHTML = '';
             kruki = krukistart.concat(krukistart);
@@ -293,7 +293,7 @@
         <div class="container" >
         <div class="row justify-content-center" >
           <div class="col-auto" >
-            <small> {% trans 'Krukowate'%} 2023 v.6.2 </small>
+            <small> {% trans 'Krukowate'%} 2023 v.6.3 </small>
           </div>
           <div class="col-auto" >
             <a onclick="showSection('policy')"><small>{% trans 'Polityka Prywatności'%}</small></a>

@@ -23,7 +23,7 @@
     var okno2 = document.getElementById("okno2");
     var cont2 = document.getElementById("cont2");
     function game() {
-      removeSection();
+      removeSection('game', true);
       document.getElementById('game').classList.add('active');
       document.getElementById("okno2").innerHTML = '';
       kruki = krukistart.concat(krukistart);
